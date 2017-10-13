@@ -1,0 +1,99 @@
+{% extends "reg_form.html" %}
+{% load crispy_forms_tags %}
+
+{% block pos %}<p id="step-pos">2</p>{% endblock %}
+
+{% block form %}
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" id="activate-step-3"
+                           class="btn btn-success btn-send" value="Save & Next">
+        <input type="submit" id="cancel" src="section_1.html" class="btn btn-danger" value="Cancel">
+    </form>
+{% endblock %}
+
+<!--
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='custom.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>PARISH MEMBERSHIP REGISTRATION FORM</h2>
+            <p class="lead">Section B: SPECIALIZATION</p>
+
+            <form method="post" action="">
+                <div class="section2"></div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">What is your occupation: *</label>
+                            <input id="form_email" type="email" name="email" class="form-control"
+                                   placeholder="Please enter your email *" required="required"
+                                   data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_phone">Address of your business:</label>
+                            <input id="form_phone" type="tel" name="phone" class="form-control"
+                                   placeholder="Please enter your phone">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_email">Special skill/gift/talent: *</label>
+                            <input id="form_email" type="email" name="email" class="form-control"
+                                   placeholder="Please enter your email *" required="required"
+                                   data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_phone">Favourite Sports: *</label>
+                            <input id="form_phone" type="tel" name="phone" class="form-control"
+                                   placeholder="Please enter your phone">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-success btn-send" value="Save & Next">
+                    <input type="submit" class="btn btn-default" value="Cancel">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted"><strong>*</strong> These fields are required. Contact form template by <a
+                                href="http://bootstrapious.com" target="_blank">Bootstrapious</a>.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+-->

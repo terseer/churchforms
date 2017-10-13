@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html>
+    <head>
+        <title>Registration Form</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+        <!--<link href="{% static 'css/bootstrap.min.css' %}" rel='stylesheet' type='text/css'>-->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+
+                    <img src="../static/img/logo.jpg" height="100" width="100" style="margin: 10px 0 0 0; align-self: center;">
+                    <img style="float: right;" src="../static/img/cruxifix.png" height="100" width="100" style="margin: 10px 0 0 0; align-self: center;">
+
+                    <h3 id="app-title">ST. MONICA'S CATHOLIC CHURCH, KORODUMA</h3>
+
+                    <h4 style="">PARISH MEMBERSHIP REGISTRATION FORM</h4>
+
+                    <div class="row form-group">
+                        <div class="col-xs-12">
+                            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                                <li class="active"><a href="/registration-form/section1" id="a1">
+                                    <h4 class="list-group-item-heading">Step 1</h4>
+                                    <p class="list-group-item-text">BIODATA</p>
+                                </a></li>
+                                <li class="disabled"><a href="/registration-form/section2" id="a2">
+                                    <h4 class="list-group-item-heading">Step 2</h4>
+                                    <p class="list-group-item-text">SPECIALIZATION</p>
+                                </a></li>
+                                <li class="disabled"><a href="/registration-form/section3" id="a3">
+                                    <h4 class="list-group-item-heading">Step 3</h4>
+                                    <p class="list-group-item-text">SPIRITUAL DATA</p>
+                                </a></li>
+                                <li class="disabled"><a href="/registration-form/section4" id="a4">
+                                    <h4 class="list-group-item-heading">Step 4</h4>
+                                    <p class="list-group-item-text">CHURCH WORK HISTORY</p>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {% block pos %} {% endblock %}
+
+                    {% block form %}
+
+                    {% endblock %}
+
+                    <!-- We're going to place the form here in the next step -->
+                    <!--
+                        <form id="contact-form" method="post" action="" role="form">
+                        <div class="messages"></div>
+                        <div class="controls setup-content" id="step-1">
+                            <p class="lead">Section A: BIODATA</p>
+
+                            <div class="row ">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="form_name">Full Name *</label>
+                                        <input id="" type="text" name="name" class="form-control"
+                                               placeholder="Please enter your firstname *" required="required"
+                                               data-error="Firstname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <p>Gender:</p>
+                                        <label class="radio-inline ">
+                                            <input type="radio" name="optradio">Male
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Female
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Other
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <p>Marital Status:</p>
+                                        <label class="radio-inline ">
+                                            <input type="radio" name="optradio">Single
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Married
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Widow
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Widower
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Separated
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                            State of Origin
+                                            <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Abia</a></li>
+                                            <li><a href="#">Adamawa</a></li>
+                                            <li><a href="#">Anambra</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">LGA
+                                            <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">HTML</a></li>
+                                            <li><a href="#">CSS</a></li>
+                                            <li><a href="#">JavaScript</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <input type="text" name="name" class="form-control"
+                                           placeholder="City: eg. Makurdi, port-Harcourt, ">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Email *</label>
+                                        <input id="form_email" type="email" name="email" class="form-control"
+                                               placeholder="Please enter your email *" required="required"
+                                               data-error="Valid email is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_phone">Phone</label>
+                                        <input id="form_phone" type="tel" name="phone" class="form-control"
+                                               placeholder="Please enter your phone">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message">Address *</label>
+                                        <textarea id="" name="address" class="form-control" placeholder="Residential Address *"
+                                                  rows="2" required="required"
+                                                  data-error="Please,leave us an address."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="form_name">Next of Kin: *</label>
+                                            <input id="" type="text" name="name" class="form-control"
+                                                   placeholder="Please enter name of next Kin*" required="required"
+                                                   data-error="Firstname is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="form_message">Address: *</label>
+                                            <textarea id="form_message" name="address" class="form-control"
+                                                      placeholder="Residential Address *" rows="2" required="required"
+                                                      data-error="Please,leave us an address."></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="form_name">Relationship to next of Kin: *</label>
+                                            <input id="form_name" type="text" name="name" class="form-control"
+                                                   placeholder="Example brother, sister, ...*" required="required"
+                                                   data-error="Firstname is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input type="submit" id="activate-step-2" src="section_2.html"
+                                           class="btn btn-success btn-send" value="Save & Next">
+                                    <input type="submit" class="btn btn-default" value="Cancel">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="text-muted"><strong>*</strong> These fields are required.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form class="container">
+                            <div class="row setup-content" id="step-2">
+                                <div class="col-xs-12">
+                                    <div class="col-md-12 well text-center">
+                                        <h1 class="text-center"> STEP 2</h1>
+
+                                        <form method="post" role="control">
+                                            <div class="section2"></div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="form_email">What is your occupation: *</label>
+                                                        <input id="form_email" type="email" name="email" class="form-control"
+                                                               placeholder="Please enter your email *" required="required"
+                                                               data-error="Valid email is required.">
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="form_phone">Address of your business:</label>
+                                                        <input id="form_phone" type="tel" name="phone" class="form-control"
+                                                               placeholder="Please enter your phone">
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="form_email">Special skill/gift/talent: *</label>
+                                                        <input id="form_email" type="email" name="email" class="form-control"
+                                                               placeholder="Please enter your email *" required="required"
+                                                               data-error="Valid email is required.">
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="form_phone">Favourite Sports: *</label>
+                                                        <input id="form_phone" type="tel" name="phone" class="form-control"
+                                                               placeholder="Please enter your phone">
+                                                        <div class="help-block with-errors"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <input type="submit" class="btn btn-success btn-send" value="Save & Next">
+                                                <input type="submit" class="btn btn-default" value="Cancel">
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="text-muted"><strong>*</strong> These fields are required. Contact form
+                                                template by <a href="http://bootstrapious.com" target="_blank">Bootstrapious</a>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <button id="activate-step-3" class="btn btn-primary btn-md">Activate Step 3</button>
+                    </form>
+                    -->
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    </body>
+</html>

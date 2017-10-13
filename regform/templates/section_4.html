@@ -1,0 +1,13 @@
+{% extends "reg_form.html" %}
+{% load crispy_forms_tags %}
+
+{% block pos %}<p id="step-pos">4</p>{% endblock %}
+
+{% block form %}
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-success btn-send" value="Save & Finish">
+        <input type="submit" id="cancel" src="section_1.html" class="btn btn-default" value="Cancel">
+    </form>
+{% endblock %}

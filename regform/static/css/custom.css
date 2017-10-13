@@ -1,0 +1,31 @@
+#step-pos{
+    display: none;
+}
+
+.complete{
+    position: relative;
+    top: 50vh;
+    text-align: center;
+    font-size: 5vw;
+}
+
+#app-title{
+	color: darkgoldenrod;
+	font-weight: 500px;
+	letter-spacing: 2px;
+	text-shadow: 2px 1px 0 blue, 2px 1px 0 red;
+
+}
+
+.control-label {
+	margin-bottom: -2px;
+}
+
+<<<<<<< HEAD
+#cruxifix{
+    float: right;
+=======
+form{
+    margin-bottom: 2vh;
+>>>>>>> b09edc4a1082c5c2ec3150256fff6628c2213ac2
+}
